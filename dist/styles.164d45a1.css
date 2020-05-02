@@ -1,0 +1,73 @@
+:root {
+  --fg: black;
+  --bg: white;
+  --bg-transparent: #ffffffc0;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --fg: white;
+    --bg: #222222;
+    --bg-transparent: #222222c0;
+  }
+}
+@media screen and (prefers-color-scheme: light), screen and (prefers-color-scheme: no-preference) {
+  .tooltip {
+    box-shadow: 2px 2px 4px #80808080;
+  }
+}
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: Inter;
+  margin: 0;
+}
+
+.tooltip {
+  pointer-events: none;
+  backdrop-filter: blur(3px);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 100ms linear, transform 100ms ease-out;
+  font-size: 0.75rem;
+  background-color: var(--bg-transparent);
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 2px solid gray;
+  transform: scale(80%);
+  transform-origin: left top;
+  margin: 8px;
+  font-feature-settings: "tnum";
+}
+.tooltip.visible {
+  opacity: 1;
+  transform: scale(100%);
+}
+.tooltip h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+.tooltip ul {
+  margin: 0;
+  padding: 0;
+}
+.tooltip ul li {
+  list-style-type: none;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph {
+  margin: 20px;
+}
+.graph h1 {
+  margin: 0;
+  text-align: center;
+}
+
+/*# sourceMappingURL=/styles.164d45a1.css.map */

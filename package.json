@@ -1,0 +1,11 @@
+{
+  "name": "temperature-humidity-visualization",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ben Grant <benjamin.j.grant@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.26.5",
+    "typescript": "^3.8.3"
+  }
+}
