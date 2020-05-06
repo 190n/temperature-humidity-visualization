@@ -177,7 +177,7 @@ function createPlot(
     canvas.addEventListener('mouseleave', mouseLeave);
 }
 
-import('./data.json').then(({ default: { data: rows } }) => {
+import('./data').then(({ default: rows }) => {
     createPlot(rows, 1, 3, 2, '°C', document.getElementById('temp') as HTMLCanvasElement);
     createPlot(rows, 2, 3, 5, '%', document.getElementById('humidity') as HTMLCanvasElement);
 });

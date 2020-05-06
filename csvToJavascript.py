@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Converts data.csv in current working directory into data.json
+# Converts data.csv in current working directory into data.ts
 # 58560000 is added to each timestamp as I started collecting data at 4:16 PM, which is 58560000
 # milliseconds after midnight.
 
@@ -15,5 +15,5 @@ with open('data.csv') as csvFile:
     for row in reader:
         rows.append(list(map(mapper, enumerate(list(map(float, row))))))
 
-    with open('data.json', 'w') as jsonFile:
-        jsonFile.write(json.dumps({ 'data': rows }))
+    with open('data.js', 'w') as javascriptFile:
+        javascriptFile.write(f'export default {json.dumps(rows)};')
